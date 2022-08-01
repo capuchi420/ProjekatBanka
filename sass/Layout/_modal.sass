@@ -1,0 +1,40 @@
+div.modal
+  display: none
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  z-index: 10000
+
+  div.grid
+    background-image: none
+
+    div.content
+      background-color: #333333
+      padding: 80px 40px
+      box-shadow: 0 4px 4px rgba(0,0,0,.25)
+
+      i
+        color: #FFFFFF
+        font-size: 25px
+        position: absolute
+        margin-top: -60px
+        margin-left: 800px
+        cursor: pointer
+
+      span
+        color: #FF0000
+        text-decoration: none
+        cursor: default
+
+@keyframes float
+  0%
+    top: 2000px
+  100%
+    top: 0
+
+@keyframes close-float
+  0%
+    top: 0
+  100%
+    top: 2000px

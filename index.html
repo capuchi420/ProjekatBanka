@@ -6,6 +6,7 @@
     <title>Projekat - Banka</title>
     <link rel="stylesheet" href="app.css">
     <script src="js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/fd4de77e1e.js" crossorigin="anonymous"></script>
   </head>
   <body>
 
@@ -19,10 +20,59 @@
         <div class="header">
           <h1>Dobrodosli na website <br> banke Nemanja</h1>
         </div>
+
+        <div class="form">
+          <form>
+            <label>Email</label>
+            <input type="email" name="email" placeholder="example@gmail.com">
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="**********">
+
+            <input type="submit" name="submit" value="Login">
+          </form>
+
+          <label>Nemas nalog? <span>Kreiraj novi nalog</span></label>
+
+        </div>
       </div>
 
       <div></div>
 
+    </div>
+
+    <div class="modal">
+      <div class="grid">
+
+        <div></div>
+
+        <div class="content">
+          <i class="fa-solid fa-xmark"></i>
+          <div class="form">
+            <form>
+              <label>Username <span>*</span></label>
+              <input type="text" name="username" placeholder="niko.nikolic">
+
+              <label>Email <span>*</span></label>
+              <input type="email" name="email" placeholder="example@gmail.com">
+
+              <label>Password <span>*</span></label>
+              <input type="password" name="password" placeholder="**********">
+
+              <label>Repeat password <span>*</span></label>
+              <input type="password" name="repeat-password" placeholder="**********">
+
+              <input type="submit" name="submit" value="Kreiraj nalog">
+            </form>
+
+            <label>polja sa <span>*</span> su obavezna</label>
+
+          </div>
+        </div>
+
+        <div></div>
+
+      </div>
     </div>
 
   </body>
