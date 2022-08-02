@@ -13,14 +13,17 @@ div.modal
       background-color: #333333
       padding: 80px 40px
       box-shadow: 0 4px 4px rgba(0,0,0,.25)
+      margin-top: 15px
 
-      i
-        color: #FFFFFF
-        font-size: 25px
-        position: absolute
-        margin-top: -60px
-        margin-left: 800px
-        cursor: pointer
+      div.close
+        width: 100%
+        margin-top: -30px
+
+        i
+          color: #FFFFFF
+          font-size: 25px
+          float: right
+          cursor: pointer
 
       span
         color: #FF0000
@@ -29,12 +32,12 @@ div.modal
 
 @keyframes float
   0%
-    top: 2000px
+    right: -3000px
   100%
-    top: 0
+    right: 0
 
 @keyframes close-float
   0%
-    top: 0
+    left: 0
   100%
-    top: 2000px
+    left: -3000px
