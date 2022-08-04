@@ -65,10 +65,13 @@ div.grid {
   height: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
-  justify-items: center;
-  _background-image: url("img/etienne-martin-2_K82gx9Uk8-unsplash.jpg");
-  _background-size: cover;
-  _background-repeat: no-repeat; }
+  justify-items: center; }
+
+div.grid-profile {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%; }
 
 div.content {
   z-index: 999;
@@ -120,6 +123,95 @@ div.content {
         color: #4786fa;
         text-decoration: underline;
         cursor: pointer; }
+
+div.grid-profile div.profile {
+  z-index: 1000; }
+  div.grid-profile div.profile div.actions {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    div.grid-profile div.profile div.actions button {
+      display: block;
+      width: 80%;
+      padding: 15px 0;
+      border-radius: 9px;
+      border: none;
+      margin-bottom: 15px;
+      font-size: 15px;
+      font-family: "Poppins", sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease; }
+      div.grid-profile div.profile div.actions button:nth-child(1) {
+        color: #eee;
+        background-color: #00a931;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); }
+        div.grid-profile div.profile div.actions button:nth-child(1):hover {
+          background-color: #007622; }
+      div.grid-profile div.profile div.actions button:nth-child(2) {
+        color: #eee;
+        background-color: #4786fa;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); }
+        div.grid-profile div.profile div.actions button:nth-child(2):hover {
+          background-color: #1565f9; }
+      div.grid-profile div.profile div.actions button:nth-child(3) {
+        color: #ff0000;
+        background-color: transparent;
+        border: 1px solid #ff0000;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); }
+        div.grid-profile div.profile div.actions button:nth-child(3):hover {
+          border-color: #c00;
+          color: #c00; }
+  div.grid-profile div.profile div.money {
+    margin-top: 60px; }
+    div.grid-profile div.profile div.money p {
+      color: #fff;
+      font-size: 15px;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); }
+      div.grid-profile div.profile div.money p span {
+        font-size: 22px; }
+  div.grid-profile div.profile div.iconAndName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px; }
+    div.grid-profile div.profile div.iconAndName label {
+      color: #fff;
+      font-size: 22px;
+      font-family: "Poppins", sans-serif;
+      margin-top: 20px;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); }
+    div.grid-profile div.profile div.iconAndName div.profileImg img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); }
+div.grid-profile div.actionsDone {
+  overflow-y: scroll;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  div.grid-profile div.actionsDone div.report {
+    margin-top: 20px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); }
+    div.grid-profile div.actionsDone div.report div.moneyTaken label {
+      color: #ff0000; }
+    div.grid-profile div.actionsDone div.report div.moneyAdded label {
+      color: #00a931; }
+
+div.modal.action div.grid div.content div.form form label span {
+  color: #fff; }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   div.content div.header h1 {

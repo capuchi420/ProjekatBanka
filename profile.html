@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projekat - Banka</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/fd4de77e1e.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="backgroundImage">
+      <img src="img/andrew-neel-cckf4TsHAuw-unsplash.jpg" alt="backgroundImage">
+    </div>
+
+    <div class="gradient"></div>
+
+    <div class="grid-profile">
+      <div class="profile">
+        <div class="iconAndName">
+          <div class="profileImg">
+            <img src="img/profile.jpg" alt="profileImage">
+          </div>
+          <label>niko.nikolic</label>
+        </div>
+
+        <div class="money">
+          <p>Stanje na racunu: <br> <span>2347</span><span>$</span></p>
+        </div>
+
+        <div class="actions">
+          <button type="button" name="button" id="podigniNovac">Podigni novac</button>
+          <button type="button" name="button" id="uplatiNovac">Uplati novac</button>
+          <button type="button" name="button">Odjavi se</button>
+        </div>
+      </div>
+
+      <div class="actionsDone">
+        <div class="report">
+          <div class="moneyTaken">
+            <label>-<span>653</span>$</label>
+          </div>
+          <div class="date">
+            <label>27 June 2022</label>
+          </div>
+        </div>
+
+        <div class="report">
+          <div class="moneyAdded">
+            <label>+<span>3000</span>$</label>
+          </div>
+          <div class="date">
+            <label>27 June 2022</label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal action" id="modalAction">
+      <div class="grid">
+
+        <div></div>
+
+        <div class="content">
+          <div class="close">
+              <i class="fa-solid fa-xmark" id='close'></i>
+          </div>
+
+          <div class="form">
+            <form>
+              <label>Unesite kolicinu novca koju zelite da <span></span>:</label>
+              <input type="number" name="novac" min="0">
+
+              <input class="actionExe" type="submit" name="submit" value="">
+            </form>
+          </div>
+        </div>
+
+        <div></div>
+
+      </div>
+    </div>
+  </body>
+</html>
