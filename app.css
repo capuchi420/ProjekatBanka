@@ -195,7 +195,8 @@ div.grid-profile div.actionsDone {
   flex-direction: column;
   align-items: center; }
   div.grid-profile div.actionsDone div.report {
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 80%;
     display: flex;
     justify-content: space-between;
@@ -220,7 +221,12 @@ div.modal.action div.grid div.content div.form form label span {
     width: 700px; }
 
   div.modal div.grid div.content {
-    margin-top: 15px; } }
+    margin-top: 15px; }
+
+  div#modalAction div.grid div.content {
+    width: 750px; }
+    div#modalAction div.grid div.content div.form form {
+      width: 700px; } }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   div.content div.header h1 {
     font-size: 65px; }
@@ -242,7 +248,10 @@ div.modal.action div.grid div.content div.form form label span {
     div.modal div.grid div.content div.close {
       margin-top: -20px; }
       div.modal div.grid div.content div.close i {
-        font-size: 20px; } }
+        font-size: 20px; }
+
+  div.grid-profile {
+    grid-template-columns: 100%; } }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   div.content div.header h1 {
     font-size: 45px; }
@@ -270,6 +279,9 @@ div.modal.action div.grid div.content div.form form label span {
       div.modal div.grid div.content div.close {
         margin-top: -10px; }
         div.modal div.grid div.content div.close i {
-          font-size: 15px; } }
+          font-size: 15px; }
+
+  div.grid-profile {
+    grid-template-columns: 100%; } }
 
 /*# sourceMappingURL=app.css.map */
