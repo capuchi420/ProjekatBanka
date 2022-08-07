@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projekat - Banka</title>
     <link rel="stylesheet" href="app.css">
+    <script src="js/Validator.js" defer></script>
     <script src="js/script.js" defer></script>
     <script src="https://kit.fontawesome.com/fd4de77e1e.js" crossorigin="anonymous"></script>
   </head>
@@ -26,11 +27,15 @@
 
         <div class="form">
           <form>
-            <label>Email</label>
-            <input type="email" name="email" placeholder="example@gmail.com">
+            <div>
+              <label>Email</label>
+              <input type="email" name="email" placeholder="example@gmail.com">
+            </div>
 
-            <label>Password</label>
-            <input type="password" name="password" placeholder="**********">
+            <div>
+              <label>Password</label>
+              <input type="password" name="lozinka" placeholder="**********">
+            </div>
 
             <input type="submit" name="submit" value="Login">
           </form>
@@ -56,17 +61,25 @@
 
           <div class="form">
             <form>
-              <label>Username <span>*</span></label>
-              <input type="text" name="username" placeholder="niko.nikolic">
+              <div>
+                <label>Username <span>*</span></label>
+                <input type="text" name="username" placeholder="niko.nikolic">
+              </div>
 
-              <label>Email <span>*</span></label>
-              <input type="email" name="email" placeholder="example@gmail.com">
+              <div>
+                <label>Email <span>*</span></label>
+                <input type="email" name="emailReg" placeholder="example@gmail.com">
+              </div>
 
-              <label>Password <span>*</span></label>
-              <input type="password" name="password" placeholder="**********">
+              <div>
+                <label>Password <span>*</span></label>
+                <input type="password" name="password" placeholder="**********">
+              </div>
 
-              <label>Repeat password <span>*</span></label>
-              <input type="password" name="repeat-password" placeholder="**********">
+              <div>
+                <label>Repeat password <span>*</span></label>
+                <input type="password" name="repeat-password" placeholder="**********">
+              </div>
 
               <input type="submit" name="submit" value="Kreiraj nalog">
             </form>

@@ -21,15 +21,28 @@ div.content
     form
       width: 800px
 
-      input
-        padding: 10px
-        color: #000
-        margin-bottom: 35px
-        border: none
+      div > *
+        display: block
+        width: inherit
+
+      div
+        ul
+          font-size: 15px
+          list-style: none
+          margin-top: 5px
+          color: #fa0000
+
+        input
+          font-size: 22px
+          padding: 10px
+          color: #000
+          margin-top: 35px
+          border: none
 
       input[type="submit"]
         width: auto
         margin: auto
+        margin-top: 35px
         color: #EEEEEE
         padding: 12px 24px
         background-color: #4786fa
@@ -53,6 +66,7 @@ div.content
       font-family: 'Poppins', sans-serif
       font-size: 22px
       margin-top: 25px
+      margin-bottom: -30px
 
       span
         color: #4786fa
@@ -177,5 +191,10 @@ div.modal.action
       div.form
         form
           label
+            margin-bottom: 0
+
             span
               color: #fff
+
+          input:not(input[type="submit"])
+            color: #000

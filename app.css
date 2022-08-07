@@ -23,6 +23,9 @@ div.gradient {
 input[type="submit"] {
   cursor: pointer; }
 
+form ul {
+  z-index: 1000; }
+
 div.modal {
   display: none;
   position: absolute;
@@ -91,14 +94,24 @@ div.content {
     flex-direction: column; }
     div.content div.form form {
       width: 800px; }
-      div.content div.form form input {
+      div.content div.form form div > * {
+        display: block;
+        width: inherit; }
+      div.content div.form form div ul {
+        font-size: 15px;
+        list-style: none;
+        margin-top: 5px;
+        color: #fa0000; }
+      div.content div.form form div input {
+        font-size: 22px;
         padding: 10px;
         color: #000;
-        margin-bottom: 35px;
+        margin-top: 35px;
         border: none; }
       div.content div.form form input[type="submit"] {
         width: auto;
         margin: auto;
+        margin-top: 35px;
         color: #EEEEEE;
         padding: 12px 24px;
         background-color: #4786fa;
@@ -118,7 +131,8 @@ div.content {
       color: #D5D5D5;
       font-family: "Poppins", sans-serif;
       font-size: 22px;
-      margin-top: 25px; }
+      margin-top: 25px;
+      margin-bottom: -30px; }
       div.content div.form label span {
         color: #4786fa;
         text-decoration: underline;
@@ -211,8 +225,12 @@ div.grid-profile div.actionsDone {
     div.grid-profile div.actionsDone div.report div.moneyAdded label {
       color: #00a931; }
 
-div.modal.action div.grid div.content div.form form label span {
-  color: #fff; }
+div.modal.action div.grid div.content div.form form label {
+  margin-bottom: 0; }
+  div.modal.action div.grid div.content div.form form label span {
+    color: #fff; }
+div.modal.action div.grid div.content div.form form input:not(input[type="submit"]) {
+  color: #000; }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   div.content div.header h1 {
