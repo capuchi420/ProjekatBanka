@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projekat - Banka</title>
     <link rel="stylesheet" href="app.css">
-    <script src="js/profile.js" defer></script>
+    <script src="js/Session.js" async></script>
+    <script src="js/User.js" async></script>
+    <script src="js/profile.js" async></script>
     <script src="https://kit.fontawesome.com/fd4de77e1e.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -21,17 +23,17 @@
           <div class="profileImg">
             <img src="img/profile.jpg" alt="profileImage">
           </div>
-          <label>niko.nikolic</label>
+          <label id='username'></label>
         </div>
 
         <div class="money">
-          <p>Stanje na racunu: <br> <span>2347</span><span>$</span></p>
+          <p>Stanje na racunu: <br> <span id='MONEY'></span><span>$</span></p>
         </div>
 
         <div class="actions">
           <button type="button" name="button" id="podigniNovac">Podigni novac</button>
           <button type="button" name="button" id="uplatiNovac">Uplati novac</button>
-          <button type="button" name="button">Odjavi se</button>
+          <button type="button" name="button" id="odjaviSe">Odjavi se</button>
         </div>
       </div>
 

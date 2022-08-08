@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projekat - Banka</title>
     <link rel="stylesheet" href="app.css">
-    <script src="js/Validator.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script src="js/Validator.js" async></script>
+    <script src="js/Session.js" async></script>
+    <script src="js/User.js" async></script>
+    <script src="js/script.js" async></script>
     <script src="https://kit.fontawesome.com/fd4de77e1e.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -26,21 +28,21 @@
         </div>
 
         <div class="form">
-          <form>
+          <form id='loginForm'>
             <div>
               <label>Email</label>
-              <input type="email" name="email" placeholder="example@gmail.com">
+              <input type="email" name="email" placeholder="example@gmail.com" id="loginEmail">
             </div>
 
             <div>
               <label>Password</label>
-              <input type="password" name="lozinka" placeholder="**********">
+              <input type="password" name="lozinka" placeholder="**********" id='loginPassword'>
             </div>
 
             <input type="submit" name="submit" value="Login">
           </form>
 
-          <label>Nemas nalog? <span>Kreiraj novi nalog</span></label>
+          <label>Nemas nalog? <span id="kreirajNoviNalogBTN">Kreiraj novi nalog</span></label>
 
         </div>
       </div>
@@ -60,20 +62,20 @@
           </div>
 
           <div class="form">
-            <form>
+            <form id="regForm">
               <div>
                 <label>Username <span>*</span></label>
-                <input type="text" name="username" placeholder="niko.nikolic">
+                <input type="text" name="username" placeholder="niko.nikolic" id="username">
               </div>
 
               <div>
                 <label>Email <span>*</span></label>
-                <input type="email" name="emailReg" placeholder="example@gmail.com">
+                <input type="email" name="emailReg" placeholder="example@gmail.com" id='email'>
               </div>
 
               <div>
                 <label>Password <span>*</span></label>
-                <input type="password" name="password" placeholder="**********">
+                <input type="password" name="passwordReg" placeholder="**********" id='password'>
               </div>
 
               <div>

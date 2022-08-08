@@ -1,6 +1,7 @@
 class Validator{
-  constructor(config){
+  constructor(config, formID){
     this.config = config;
+    this.formID = formID;
     this.erorrs = {};
 
     this.generateErrors();
@@ -76,7 +77,7 @@ class Validator{
 
         erorrsElement.appendChild(li);
       });
-    }  
+    }
   }
 
   validateEmail(email){
@@ -84,5 +85,15 @@ class Validator{
       return true;
     }
     return false;
+  }
+
+  validationPassed(){
+    for(let key of Object.keys(this.erorrs)){
+      if(this.erorrs[key].lenght > 0){
+        return false;
+      }
+
+      return true;
+    }
   }
 }

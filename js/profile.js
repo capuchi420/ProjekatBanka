@@ -1,4 +1,23 @@
-document.querySelector('#podigniNovac').addEventListener('click', e => {
+let session = new Session();
+let sessionID = session.getSession();
+
+if(sessionID !== ""){
+  async function showUserData(){
+    let user = new User();
+    user = await user.get(sessionID);
+
+    document.querySelector('#username').innerText = user['Username'];
+    document.querySelector('#MONEY').innerText = user['Money'];
+
+
+  }
+
+  showUserData();
+}else{
+  window.location.href = '/';
+}
+
+document.querySelector('div.actions #podigniNovac').addEventListener('click', e => {
   e.preventDefault();
   document.querySelector('#modalAction').style.display = 'block';
   document.querySelector('div.gradient').style.zIndex = '2000';
@@ -9,7 +28,7 @@ document.querySelector('#podigniNovac').addEventListener('click', e => {
   document.querySelector('input.actionExe').style.background = '#00a931';
 });
 
-document.querySelector('#uplatiNovac').addEventListener('click', e => {
+document.querySelector('div.actions #uplatiNovac').addEventListener('click', e => {
   e.preventDefault();
   document.querySelector('#modalAction').style.display = 'block';
   document.querySelector('div.gradient').style.zIndex = '2000';
@@ -18,6 +37,13 @@ document.querySelector('#uplatiNovac').addEventListener('click', e => {
   document.querySelector('div.form form label span').innerText = "uplatite";
   document.querySelector('input.actionExe').value = "Uplati novac";
   document.querySelector('input.actionExe').style.background = '#4786fa';
+});
+
+document.querySelector('div.actions #odjaviSe').addEventListener('click', e => {
+  e.preventDefault();
+
+  session.destroySession();
+  window.location.href = '/';
 });
 
 document.querySelector('i#close').addEventListener('click', (e) => {
