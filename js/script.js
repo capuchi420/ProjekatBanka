@@ -5,6 +5,9 @@ if(session !== ""){
   window.location.href = 'profile.html';
 }
 
+alert('Ukoliko \'Kreiraj novi nalog\' ili Login dugme ne rade, osvezite stranicu \'CTRL + SHIFT + R\'');
+
+/*----------------------------------------------- Open and close modal -------------------------------------------------------*/
 document.querySelector('span#kreirajNoviNalogBTN').addEventListener('click', (e) => {
   e.preventDefault();
   document.querySelector('#modal').style.display = 'block';

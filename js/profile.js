@@ -1,5 +1,6 @@
 alert('Ukoliko se podaci ne ucitaju pretisnite \'CTRL + SHIFT + R\'');
 
+/*----------------------------------------------- Open and close modals -------------------------------------------------------*/
 let podigniBTN = document.querySelector('div.actions #podigniNovac');
 podigniBTN.addEventListener('click', (e) => {
   e.preventDefault();
@@ -15,10 +16,32 @@ document.querySelector('div.actions #uplatiNovac').addEventListener('click', e =
   document.querySelector('div.gradient').style.background = 'rgba(0,0,0,.9)';
 });
 
+document.querySelector('i#podigni').addEventListener('click', (e) => {
+  //e.preventDefault();
+  document.querySelector('#podigniModal').style.display = 'none';
+  document.querySelector('div.gradient').style.zIndex = '100';
+  document.querySelector('div.gradient').style.background = 'linear-gradient(to bottom, rgba(0,0,0,.7), rgba(0,0,0,.8))';
+});
+
+document.querySelector('i#uplati').addEventListener('click', (e) => {
+  //e.preventDefault();
+  document.querySelector('#uplatiModal').style.display = 'none';
+  document.querySelector('div.gradient').style.zIndex = '100';
+  document.querySelector('div.gradient').style.background = 'linear-gradient(to bottom, rgba(0,0,0,.7), rgba(0,0,0,.8))';
+});
+
+document.querySelector('div.actions #odjaviSe').addEventListener('click', e => {
+  e.preventDefault();
+
+  session.destroySession();
+  window.location.href = '/';
+});
+
 let session = new Session();
 let sessionID = session.getSession();
 let apiURL = 'https://62efddcb57311485d129f278.mockapi.io';
 
+/*----------------------------------------------- Showing user data -------------------------------------------------------*/
 if(sessionID !== ""){
   async function showUserData(){
     let user = new User();
@@ -72,6 +95,7 @@ if(sessionID !== ""){
   window.location.href = '/';
 }
 
+/*----------------------------------------------- Podigni novac function -------------------------------------------------------*/
 document.querySelector('form#podigniForm').addEventListener('submit', e => {
   e.preventDefault();
   async function takeMoney(){
@@ -90,7 +114,7 @@ document.querySelector('form#podigniForm').addEventListener('submit', e => {
         Date: date.toUTCString(),
         userID: user.id,
         Taken: true
-      }
+      };
 
       data = JSON.stringify(data);
 
@@ -98,7 +122,7 @@ document.querySelector('form#podigniForm').addEventListener('submit', e => {
 
       let podaci = {
         Money: money
-      }
+      };
 
       podaci = JSON.stringify(podaci);
 
@@ -143,6 +167,7 @@ document.querySelector('form#podigniForm').addEventListener('submit', e => {
   takeMoney();
 });
 
+/*----------------------------------------------- Uplati novac function -------------------------------------------------------*/
 let uplatiFORM = document.querySelector('form#uplatiForm');
 uplatiFORM.addEventListener('submit', e => {
   e.preventDefault();
@@ -163,14 +188,14 @@ uplatiFORM.addEventListener('submit', e => {
         Date: date.toUTCString(),
         userID: user.id,
         Taken: false
-      }
+      };
 
       data = JSON.stringify(data);
 
       money = parseInt(user.Money) + money;
       let podaci = {
         Money: money
-      }
+      };
 
       podaci = JSON.stringify(podaci);
 
@@ -211,19 +236,4 @@ uplatiFORM.addEventListener('submit', e => {
   }
 
   addMoney();
-});
-
-document.querySelector('div.actions #odjaviSe').addEventListener('click', e => {
-  e.preventDefault();
-
-  session.destroySession();
-  window.location.href = '/';
-});
-
-document.querySelector('i#close').addEventListener('click', (e) => {
-  e.preventDefault();
-  document.querySelector('#uplatiModal').style.display = 'none';
-  document.querySelector('#podigniModal').style.display = 'none';
-  document.querySelector('div.gradient').style.zIndex = '100';
-  document.querySelector('div.gradient').style.background = 'linear-gradient(to bottom, rgba(0,0,0,.7), rgba(0,0,0,.8))';
 });

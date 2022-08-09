@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <!--############################################### Meta tags ###############################################-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Projekat - Banka</title>
+
+    <!--############################################### CSS ###############################################-->
     <link rel="stylesheet" href="app.css">
+
+    <!--############################################### JS ###############################################-->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" async></script>
     <script src="js/Session.js" async></script>
     <script src="js/User.js" async></script>
     <script src="js/profile.js" async></script>
     <script src="https://kit.fontawesome.com/fd4de77e1e.js" crossorigin="anonymous"></script>
+
   </head>
+
   <body>
+
     <div class="backgroundImage">
       <img src="img/andrew-neel-cckf4TsHAuw-unsplash.jpg" alt="backgroundImage">
     </div>
 
     <div class="gradient"></div>
 
+    <!--############################################### Main content ###############################################-->
     <div class="grid-profile">
+
+      <!--############################################### Profile side ###############################################-->
       <div class="profile">
+
         <div class="iconAndName">
+
           <div class="profileImg">
             <img src="img/profile.jpg" alt="profileImage">
           </div>
+
           <label id='username'></label>
         </div>
 
@@ -36,20 +51,23 @@
           <button type="button" name="button" id="uplatiNovac">Uplati novac</button>
           <button type="button" name="button" id="odjaviSe">Odjavi se</button>
         </div>
+
       </div>
 
+      <!--############################################### Reports side ###############################################-->
       <div class="actionsDone"></div>
 
     </div>
 
+    <!--############################################### Podigni novac modal ###############################################-->
     <div class="modal action" id="podigniModal">
       <div class="grid">
-
         <div></div>
 
         <div class="content">
+
           <div class="close">
-              <i class="fa-solid fa-xmark" id='close'></i>
+              <i class="fa-solid fa-xmark" id='podigni'></i>
           </div>
 
           <div class="form">
@@ -60,21 +78,22 @@
               <input class="actionExe" type="submit" name="submit" value="Podigni novac">
             </form>
           </div>
+
         </div>
 
         <div></div>
-
       </div>
     </div>
 
+    <!--############################################### Uplati novac modal ###############################################-->
     <div class="modal action" id="uplatiModal">
       <div class="grid">
-
         <div></div>
 
         <div class="content">
+
           <div class="close">
-              <i class="fa-solid fa-xmark" id='close'></i>
+              <i class="fa-solid fa-xmark" id='uplati'></i>
           </div>
 
           <div class="form">
@@ -88,8 +107,8 @@
         </div>
 
         <div></div>
-
       </div>
     </div>
+
   </body>
 </html>
