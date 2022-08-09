@@ -60,5 +60,113 @@ class User{
     return data;
   }
 
+  async takeMoney(userID, amout){
+    let money = amout;
+    let reportMoney = money;
+    let api = `${this.apiURL}/user/${userID}`;
+
+    let response = await fetch(api);
+    let userData = await response.json();
+
+    if(money <= userData.Money){
+      let date = new Date();
+      date.setTime(date.getTime());
+
+      let data = {
+        MoneyAddTaken: money,
+        Date: date.toUTCString(),
+        userID: userData.id
+      }
+
+      data = JSON.stringify(data);
+
+      money = userData.Money - money;
+
+      money = JSON.stringify(money);
+
+      fetch(api, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: money
+      }).then(response => response.json()).then(data => {
+        console.log('sve je ok');
+      });
+
+      fetch(this.apiURL + '/report', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: data
+      }).then(response => response.json()).then(data => {
+        let report = document.createElement('div');
+        report.classList.add('report');
+        report.innerHTML = ` <div class="moneyTaken">
+                                <label>-<span>${reportMoney}</span>$</label>
+                              </div>
+                              <div class="date">
+                                <label>${data.Date}</label>
+                              </div>`;
+      });
+    }else{
+      alert("Nemate dovoljno novca na racunu");
+    }
+  }
+
+  async addMoney(userID, amout){
+    let money = amout;
+    let reportMoney = money;
+    let api = `${this.apiURL}/user/${userID}`;
+
+    let response = await fetch(api);
+    let userData = await response.json();
+
+    if(true){
+      let date = new Date();
+      date.setTime(date.getTime());
+
+      let data = {
+        MoneyAddTaken: money,
+        Date: date.toUTCString(),
+        userID: userData.id
+      }
+
+      data = JSON.stringify(data);
+
+      money = userData.Money + money;
+
+      money = JSON.stringify(money);
+
+      fetch(api, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: money
+      }).then(response => response.json()).then(data => {
+        console.log('sve je ok');
+      });
+
+      fetch(this.apiURL + '/report', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: data
+      }).then(response => response.json()).then(data => {
+        let report = document.createElement('div');
+        report.classList.add('report');
+        report.innerHTML = ` <div class="moneyTaken">
+                                <label>+<span>${reportMoney}</span>$</label>
+                              </div>
+                              <div class="date">
+                                <label>${data.Date}</label>
+                              </div>`;
+      });
+    }
+  }
+
 
 }

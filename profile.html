@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projekat - Banka</title>
     <link rel="stylesheet" href="app.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" async></script>
     <script src="js/Session.js" async></script>
     <script src="js/User.js" async></script>
     <script src="js/profile.js" async></script>
@@ -37,29 +38,11 @@
         </div>
       </div>
 
-      <div class="actionsDone">
-        <div class="report">
-          <div class="moneyTaken">
-            <label>-<span>653</span>$</label>
-          </div>
-          <div class="date">
-            <label>27 June 2022</label>
-          </div>
-        </div>
+      <div class="actionsDone"></div>
 
-        <div class="report">
-          <div class="moneyAdded">
-            <label>+<span>3000</span>$</label>
-          </div>
-          <div class="date">
-            <label>27 June 2022</label>
-          </div>
-        </div>
-
-      </div>
     </div>
 
-    <div class="modal action" id="modalAction">
+    <div class="modal action" id="podigniModal">
       <div class="grid">
 
         <div></div>
@@ -70,11 +53,36 @@
           </div>
 
           <div class="form">
-            <form>
-              <label>Unesite kolicinu novca koju zelite da <span></span>:</label>
-              <input type="number" name="novac" min="0">
+            <form id='podigniForm'>
+              <label>Unesite kolicinu novca koju zelite da podignete:</label>
+              <input type="number" name="novac" min="0" id='podigniAmout'>
 
-              <input class="actionExe" type="submit" name="submit" value="">
+              <input class="actionExe" type="submit" name="submit" value="Podigni novac">
+            </form>
+          </div>
+        </div>
+
+        <div></div>
+
+      </div>
+    </div>
+
+    <div class="modal action" id="uplatiModal">
+      <div class="grid">
+
+        <div></div>
+
+        <div class="content">
+          <div class="close">
+              <i class="fa-solid fa-xmark" id='close'></i>
+          </div>
+
+          <div class="form">
+            <form id='uplatiForm'>
+              <label>Unesite kolicinu novca koju zelite da uplatite:</label>
+              <input type="number" name="novac" min="0" id='uplatiAmout'>
+
+              <input class="actionExe" type="submit" name="submit" value="Uplati novac">
             </form>
           </div>
         </div>
