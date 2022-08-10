@@ -52,7 +52,7 @@ let config = {
     req: true,
     minlength: 8,
     maxlength: 30,
-    match: "repeat-password"
+    //match: "repeat-password"
   },
 
   "repeat-password": {
