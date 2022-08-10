@@ -51,8 +51,7 @@ let config = {
   "passwordReg": {
     req: true,
     minlength: 8,
-    maxlength: 30,
-    match: "repeat-password"
+    maxlength: 30
   },
 
   "repeat-password": {

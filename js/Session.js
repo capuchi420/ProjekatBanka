@@ -10,10 +10,20 @@ class Session{
 
   getSession(){
     let name = 'userID=';
-    let ca = document.cookie;
-    let aaa = ca.length > 0 ? ca.substring(name.length, ca.length) : "";
+    let ca = document.cookie.split(';');
 
-    return aaa;
+    for(let i = 0; i < ca.length; i++){
+      let c = ca[i].substring(1, 8);
+      if(c == name){
+        let aaa = ca[i].substring(name.length+1, ca[i].length);
+
+        return aaa;
+      }
+    }
+
+    //let aaa = ca.length > 0 ? ca.substring(name.length, ca.length) : "";
+
+    return "";
   }
 
   destroySession(){
